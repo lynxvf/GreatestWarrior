@@ -4,9 +4,9 @@ class Warrior:
     AVAILABLE_RANKS = ["Pushover", "Novice", "Fighter", "Warrior", "Veteran", "Sage", "Elite",
                        "Conqueror", "Champion", "Master", "Greatest"]
 
-    def __init__(self, experience, achievements):
+    def __init__(self, experience):
         self.experience = experience
-        self.achievements = achievements
+        self.achievements = []
 
     def battle(self, opponent_level: int):
         if opponent_level < 1 or opponent_level > 100:
@@ -43,7 +43,7 @@ class Warrior:
 
 
 if __name__ == "__main__":
-    warrior = Warrior(100, [])
+    warrior = Warrior(100)
     print(warrior.training("Defeated Jackie Chan with chair", 1000, 1))
     print("rank =", warrior.rank, "experience =", warrior.experience, "level = ", warrior.level)
     print(warrior.battle(8))
